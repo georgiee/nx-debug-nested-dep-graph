@@ -245,19 +245,19 @@
     },
     "d": {
       "projectType": "library",
-      "root": "libs/d",
-      "sourceRoot": "libs/d/src",
+      "root": "libs/nested/d",
+      "sourceRoot": "libs/nested/d/src",
       "prefix": "debug-nx-deps-problem",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "libs/d/tsconfig.lib.json",
-            "project": "libs/d/ng-package.json"
+            "tsConfig": "libs/nested/d/tsconfig.lib.json",
+            "project": "libs/nested/d/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/d/tsconfig.lib.prod.json"
+              "tsConfig": "libs/nested/d/tsconfig.lib.prod.json"
             }
           }
         },
@@ -265,19 +265,19 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/d/tsconfig.lib.json",
-              "libs/d/tsconfig.spec.json"
+              "libs/nested/d/tsconfig.lib.json",
+              "libs/nested/d/tsconfig.spec.json"
             ],
-            "exclude": ["**/nolibs/de_modules/**", "!libs/d/**"]
+            "exclude": ["**/nolibs/nested/de_modules/**", "!libs/nested/d/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/d/jest.config.js",
-            "tsConfig": "libs/d/tsconfig.spec.json",
+            "jestConfig": "libs/nested/d/jest.config.js",
+            "tsConfig": "libs/nested/d/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/d/src/test-setup.ts"
+            "setupFile": "libs/nested/d/src/test-setup.ts"
           }
         }
       },
