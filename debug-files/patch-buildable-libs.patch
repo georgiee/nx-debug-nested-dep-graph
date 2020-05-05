@@ -1,0 +1,17 @@
+103a104,105
+>         console.log('---- checkDependentProjectsHaveBeenBuilt:', paths);
+> 
+122a125
+>     console.log('---- updatePaths. dependencies:', dependencies);
+124a128,131
+>             console.log('updatePaths of: ' + dep.name);
+>             console.log('current value: ' + paths[dep.name]);
+>             console.log('overriden value: ' + dep.outputs);
+> 
+125a133,134
+>         }else {
+>             console.log('No dependencies')
+126a136
+> 
+127a138
+> 
