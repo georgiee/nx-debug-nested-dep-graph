@@ -122,6 +122,166 @@
           }
         }
       }
+    },
+    "a": {
+      "projectType": "library",
+      "root": "libs/a",
+      "sourceRoot": "libs/a/src",
+      "prefix": "debug-nx-deps-problem",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/a/tsconfig.lib.json",
+            "project": "libs/a/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/a/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/a/tsconfig.lib.json",
+              "libs/a/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/a/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/a/jest.config.js",
+            "tsConfig": "libs/a/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/a/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "b": {
+      "projectType": "library",
+      "root": "libs/b",
+      "sourceRoot": "libs/b/src",
+      "prefix": "debug-nx-deps-problem",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/b/tsconfig.lib.json",
+            "project": "libs/b/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/b/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/b/tsconfig.lib.json",
+              "libs/b/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/b/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/b/jest.config.js",
+            "tsConfig": "libs/b/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/b/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "c": {
+      "projectType": "library",
+      "root": "libs/c",
+      "sourceRoot": "libs/c/src",
+      "prefix": "debug-nx-deps-problem",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/c/tsconfig.lib.json",
+            "project": "libs/c/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/c/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/c/tsconfig.lib.json",
+              "libs/c/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/c/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/c/jest.config.js",
+            "tsConfig": "libs/c/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/c/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "d": {
+      "projectType": "library",
+      "root": "libs/d",
+      "sourceRoot": "libs/d/src",
+      "prefix": "debug-nx-deps-problem",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/d/tsconfig.lib.json",
+            "project": "libs/d/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/d/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/d/tsconfig.lib.json",
+              "libs/d/tsconfig.spec.json"
+            ],
+            "exclude": ["**/nolibs/de_modules/**", "!libs/d/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/d/jest.config.js",
+            "tsConfig": "libs/d/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/d/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

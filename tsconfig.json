@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@debug-nx-deps-problem/a": ["libs/a/src/index.ts"],
+      "@debug-nx-deps-problem/b": ["libs/b/src/index.ts"],
+      "@debug-nx-deps-problem/c": ["libs/c/src/index.ts"],
+      "@debug-nx-deps-problem/d": ["libs/d/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -25,6 +25,18 @@
     "debug-nx-deps-problem-e2e": {
       "tags": [],
       "implicitDependencies": ["debug-nx-deps-problem"]
+    },
+    "a": {
+      "tags": []
+    },
+    "b": {
+      "tags": []
+    },
+    "c": {
+      "tags": []
+    },
+    "d": {
+      "tags": []
     }
   }
 }
