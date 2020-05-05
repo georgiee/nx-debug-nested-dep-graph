@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "projects": {
+    "debug-nx-deps-problem": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/debug-nx-deps-problem",
+      "sourceRoot": "apps/debug-nx-deps-problem/src",
+      "prefix": "debug-nx-deps-problem",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/debug-nx-deps-problem",
+            "index": "apps/debug-nx-deps-problem/src/index.html",
+            "main": "apps/debug-nx-deps-problem/src/main.ts",
+            "polyfills": "apps/debug-nx-deps-problem/src/polyfills.ts",
+            "tsConfig": "apps/debug-nx-deps-problem/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/debug-nx-deps-problem/src/favicon.ico",
+              "apps/debug-nx-deps-problem/src/assets"
+            ],
+            "styles": ["apps/debug-nx-deps-problem/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/debug-nx-deps-problem/src/environments/environment.ts",
+                  "with": "apps/debug-nx-deps-problem/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "debug-nx-deps-problem:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "debug-nx-deps-problem:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "debug-nx-deps-problem:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/debug-nx-deps-problem/tsconfig.app.json",
+              "apps/debug-nx-deps-problem/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/debug-nx-deps-problem/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/debug-nx-deps-problem/jest.config.js",
+            "tsConfig": "apps/debug-nx-deps-problem/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/debug-nx-deps-problem/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "debug-nx-deps-problem-e2e": {
+      "root": "apps/debug-nx-deps-problem-e2e",
+      "sourceRoot": "apps/debug-nx-deps-problem-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/debug-nx-deps-problem-e2e/cypress.json",
+            "tsConfig": "apps/debug-nx-deps-problem-e2e/tsconfig.e2e.json",
+            "devServerTarget": "debug-nx-deps-problem:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "debug-nx-deps-problem:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/debug-nx-deps-problem-e2e/tsconfig.e2e.json"],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/debug-nx-deps-problem-e2e/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/react": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/web": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nx-plugin": {
+      "plugin": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "debug-nx-deps-problem"
+}

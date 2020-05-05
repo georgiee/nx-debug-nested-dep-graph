@@ -1,0 +1,30 @@
+{
+  "npmScope": "debug-nx-deps-problem",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "debug-nx-deps-problem": {
+      "tags": []
+    },
+    "debug-nx-deps-problem-e2e": {
+      "tags": [],
+      "implicitDependencies": ["debug-nx-deps-problem"]
+    }
+  }
+}
