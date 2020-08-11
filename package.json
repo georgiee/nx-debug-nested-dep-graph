@@ -24,7 +24,7 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js",
     "debug-nx-build": "sh debug.sh"
   },
   "private": true,
@@ -41,7 +41,7 @@
     "@nrwl/angular": "10.0.10",
     "core-js": "^2.5.4",
     "rxjs": "6.5.5",
-    "tslib": "^1.10.0",
+    "tslib": "^2.0.1",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
@@ -60,11 +60,12 @@
     "eslint": "6.8.0",
     "jest": "25.2.3",
     "jest-preset-angular": "8.1.2",
-    "ng-packagr": "^9.0.0",
+    "ng-packagr": "^10.0.3",
     "prettier": "2.0.4",
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "3.9.7"
+    "typescript": "3.9.7",
+    "eslint-plugin-cypress": "^2.10.3"
   }
 }
